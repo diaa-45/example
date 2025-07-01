@@ -1,0 +1,9 @@
+li{
+    cursor: pointer;
+    background-color: #f1efeb;
+    transition: all 0.8s ease-in-out;
+}
+
+li:hover{
+    color: red;
+}
