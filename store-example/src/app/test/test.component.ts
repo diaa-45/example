@@ -9,3 +9,4 @@ import { Component } from '@angular/core';
 export class TestComponent {
 
 }
+// [routerLink]="['categories',c.id]"  === routerLink=['categories',c.id]

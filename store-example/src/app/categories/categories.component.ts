@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Category } from '../models/category';
 import { CommonModule } from '@angular/common';
+import { ProductService } from '../services/product.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
-  imports: [CommonModule],
+  imports: [CommonModule , RouterModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
-export class CategoriesComponent {
-  cats : Category[]=[
-    {id:1 , name:"Mobiles"},
-    {id:2 , name:"Books"},
-  ]
+export class CategoriesComponent implements OnInit {
+  cats : Category[]=[];
+  constructor(private serv : ProductService){}
+  
+  ngOnInit(){
+    this.cats= this.serv.getAllCat();
+/*     console.log(this.cats.length);
+ */    
+  }
 }
