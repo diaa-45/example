@@ -1,0 +1,31 @@
+<form #f="ngForm" (ngSubmit)="submitForm()" class="border p-4 rounded bg-light">
+
+    <h3>Contact Us !!!!!!</h3>
+
+   <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" name="name" [(ngModel)]="name" required #nameValidation="ngModel">
+        <div class="text-danger" *ngIf="nameValidation.invalid">
+                Name is required
+        </div>
+   </div>
+
+
+   <div class="mb-3">
+        <label class="form-label">Email</label>
+       <input class="form-control" type="email" name="email" [(ngModel)]="email" required #emailValidation="ngModel">
+       <div class="text-danger" *ngIf="emailValidation.invalid">
+                Email is required
+        </div>
+   </div>
+   <div class="mb-3">
+        <label class="form-label">Message</label>
+       <textarea class="form-control" name="message" rows="4" [(ngModel)]="message" required></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Send</button>
+
+    <div class="alert alert-success" *ngIf="submited">
+        Thank you for your Message !!!!
+    </div>
+</form>

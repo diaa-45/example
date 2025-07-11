@@ -11,11 +11,12 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductsComponent {
 constructor(private serv : ProductService){}
+
   products:Product[]=[]
 
   ngOnInit(){
       
-
+    
     this.products = this.serv.getAll();
   }
 }
