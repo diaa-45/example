@@ -1,0 +1,13 @@
+
+<form [formGroup]="form" (ngSubmit)="Submit()">
+    <label class="form-label">Name</label>
+    <input class="form-control" type="text" formControlName="name">
+        
+    <label class="form-label">Email</label>
+    <input class="form-control" type="email" formControlName="email">
+
+    <label class="form-label">Message</label>
+    <input class="form-control" type="email" formControlName="message">
+       
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Send</button>
+</form>
