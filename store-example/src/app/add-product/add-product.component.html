@@ -1,0 +1,34 @@
+<div *ngIf="addedProduct" class=" card mt-3">
+    <img [src]="addedProduct.image" class="card-img-top" alt="">
+    <div class="card-body">
+        <h3 class="card-title">{{addedProduct.t}}</h3>
+        <p class="card-text">{{addedProduct.d}}</p>
+        <p class="card-text">{{addedProduct.c}}</p>
+        <p class="card-text"> <strong>Price :</strong>{{addedProduct.p}}</p>
+        <div class="alert alert-success mt-3">
+            Product added successfully - Redirect to Product page after 5 seconeds
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label class="form-label">Title</label>
+    <input class="form-control"  formControlName="t">
+        
+    <label class="form-label">Price</label>
+    <input class="form-control" type="number" formControlName="p">
+
+    <label class="form-label">Description</label>
+    <textarea class="form-control" formControlName="d"></textarea>
+
+    <label class="form-label">Category</label>
+    <input class="form-control" formControlName="c">
+
+   
+       
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Add Product</button>
+</form>

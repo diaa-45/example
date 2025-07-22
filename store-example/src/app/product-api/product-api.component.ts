@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ProductApiService } from '../services/product-api.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-api',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './product-api.component.html',
   styleUrl: './product-api.component.css'
 })

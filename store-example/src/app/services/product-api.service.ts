@@ -17,4 +17,11 @@ export class ProductApiService {
   getProducts() : Observable<any>{
    return this.http.get(this.url);
   }
+
+  addProduct(product:any): Observable<any>{
+    return this.http.post(this.url,product);
+  }
+  getProductById(id:number):Observable<any>{
+    return this.http.get(`${this.url}/${id}`);
+  }
 }
