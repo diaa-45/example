@@ -24,4 +24,10 @@ export class ProductApiService {
   getProductById(id:number):Observable<any>{
     return this.http.get(`${this.url}/${id}`);
   }
+  deleteProduct(id: number) : Observable<any>{
+    return this.http.delete(`${this.url}/${id}`)
+  }
+  updateProduct(id : number ,product : any): Observable<any>{
+    return this.http.put(`${this.url}/${id}`,product)
+  }
 }

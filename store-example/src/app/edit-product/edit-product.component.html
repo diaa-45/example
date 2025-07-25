@@ -1,0 +1,24 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label class="form-label">Title</label>
+    <input class="form-control"  formControlName="title">
+        
+    <label class="form-label">Price</label>
+    <input class="form-control" type="number" formControlName="price">
+
+    <label class="form-label">Description</label>
+    <textarea class="form-control" formControlName="description"></textarea>
+
+    <label class="form-label">Category</label>
+    <input class="form-control" formControlName="category">
+
+   
+       
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Edit Product</button>
+</form>
+
+<div *ngIf="showOverlay" class="overlay">
+    <div class="overlay-content">
+        Product has updated successfully !!
+    </div>
+</div>

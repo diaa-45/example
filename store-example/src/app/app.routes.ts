@@ -8,6 +8,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProductApiComponent } from './product-api/product-api.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 export const routes: Routes = [/* 
     {path:'products',component: CategoryProductsComponent},
@@ -19,6 +20,7 @@ export const routes: Routes = [/*
     {path:'product-api',component: ProductApiComponent},
     {path:'add-product',component: AddProductComponent},
     {path:'product-api/:id',component: ProductDetailsComponent},
+    {path:'edit/:id',component: EditProductComponent},
 ];
 
 @NgModule({
