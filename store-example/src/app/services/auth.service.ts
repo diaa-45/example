@@ -20,7 +20,7 @@ export class AuthService {
     this.isLogedIn =false;
     localStorage.removeItem('logedIn');
   }
-  isAthuntiicated(): boolean{
+  isAthunticated(): boolean{
     return localStorage.getItem('logedIn') !== null;
    /* if (localStorage.getItem('logedIn') !== null){
     return true

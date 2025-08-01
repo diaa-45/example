@@ -10,6 +10,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guardss/auth.guard';
 
 export const routes: Routes = [/* 
     {path:'products',component: CategoryProductsComponent},
@@ -18,11 +19,11 @@ export const routes: Routes = [/*
     {path:'categories',component: CategoriesComponent},
     {path:'categories/:id',component: CategoryProductsComponent},
     {path:'contact',component: ContactUsComponent},
-    {path:'product-api',component: ProductApiComponent},
-    {path:'add-product',component: AddProductComponent},
+    {path:'product-api',component: ProductApiComponent, canActivate:[AuthGuard]},
+    {path:'login',component: LoginComponent},
+    {path:'add-product',component: AddProductComponent, canActivate:[AuthGuard]},
     {path:'product-api/:id',component: ProductDetailsComponent},
     {path:'edit/:id',component: EditProductComponent},
-    {path:'login',component: LoginComponent}
 ];
 
 @NgModule({
