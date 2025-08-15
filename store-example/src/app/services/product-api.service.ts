@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductApiService {
-  private url = 'https://fakestoreapi.com/products';
+  private url = 'https://api.escuelajs.co/api/v1/products';
 
   constructor(private http : HttpClient) { }
 
@@ -14,8 +14,21 @@ export class ProductApiService {
       return this.products
     } */
 
-  getProducts() : Observable<any>{
-   return this.http.get(this.url);
+  getFullProducts(search: string) : Observable<any>{
+    let params = new HttpParams()
+          .set('title',search);
+
+   return this.http.get(this.url,{params});
+  }
+  
+  
+  getProducts(skip: number , limit: number,search: string) : Observable<any>{
+    let params = new HttpParams()
+          .set('offset',skip)
+          .set('limit',limit)
+          .set('title',search);
+
+   return this.http.get(this.url,{params});
   }
 
   addProduct(product:any): Observable<any>{

@@ -2,7 +2,7 @@
     height: 200px;
     width: 200px;
 }
-button{
+button, .page{
     background-color: antiquewhite;
     width: 50%;
     margin: 20px auto;
@@ -12,4 +12,20 @@ button{
 }
 a{
     height: 280px;
+}
+.page{
+    width: 8%;
+    background-color: chocolate;
+}
+.search-card{
+    width: 50%;
+    margin: auto 22%;
+}
+.search-options{
+    margin-bottom: 30px;
+}
+.search-card button{
+    background-color: chocolate;
+    width: 120px;
+    margin-top: 10px;
 }
